@@ -23,21 +23,21 @@ First of all, you will need to properly set up the .env.local file. This project
 1. REACT_APP_ENV_LOCAL: If there is nothing, the app will asume that the environment is "production", else, if there is anything, the app will change to "local" / "development" environment.
    <br/>
    <br/>
-2. REACT_APP_USE_LOCAL_API: If empty, the app will call the production api, else, it will use http://localhost:8000/api (see src/misc/ajaxManajer.ts to change the base uri for both options).
+2. REACT_APP_USE_LOCAL_API: If empty, the app will call the production api, else, it will use http://localhost:8000/api (see src/hooks/useApi.ts to change the base uri for both options).
    <br/>
    <br/>
-3. REACT_APP_RECAPTCHA_SITE_KEY & REACT_APP_RECAPTCHA_SECRET_KEY: These are required to use the Captcha component, you can get them signing up here: [Google ReCaptcha Admin Site](https://www.google.com/recaptcha/admin)
+3. REACT_APP_RECAPTCHA_SITE_KEY & REACT_APP_RECAPTCHA_SECRET_KEY: These are required to use the Captcha component, you can get them by signing up here: [Google ReCaptcha Admin Site](https://www.google.com/recaptcha/admin)
    <br/>
    <br/>
-4. REACT_APP_PAYPAL_CLIENT_ID: This is your client ID for PayPal, you can get it on the [Developers Paypal](https://developer.paypal.com) site. Once signed up, create an application, and the go to the "live" credentials.
-   No secret key is required to use the magic buttons of PayPal
+4. REACT_APP_PAYPAL_CLIENT_ID: This is your client ID for PayPal, you can get it on the [Developers Paypal](https://developer.paypal.com) site. Once signed up, create an application, and then go to the "live" credentials.
+   No secret key is required to use the magic buttons of PayPal.
    <br/>
    <br/>
 5. REACT_APP_COINBASE_API_KEY: This is required to use the Coinbase API in order to let the user pay with cryptos.
-   You can get your Coinbase credentials on [Coinbase Commerce](https://commerce.coinbase.com)
+   You can get your Coinbase credentials on [Coinbase Commerce](https://commerce.coinbase.com).
    <br/>
    <br/>
-   Once you are done with all of that, the last thing is to run
+   Once you are done with all of that, the last thing is to run the following:
 
     `npm install`
 
@@ -49,9 +49,9 @@ I don't know if this is a good practise or not, but I tried keep everything as s
 
 Basically, all the components that don't require a unit test, and don't use styles from Material-UI, are stored in their respective file, with the name of the component as the name of the file.
 
-Then, the components that do have a test, and / or use the Material-UI styles, are stored in a folder with the name of the component, and with the test named as `componentName.test.tsx`, and styles as `styles.ts`.
+Then, the components that do have a test, and / or use the Material-UI styles, are stored in a folder with the name of the component, with the test named as `componentName.test.tsx`, and styles as `styles.ts`.
 
-And lastly, there are a few components that aren't used outside of 1 or 2 parent components, and those are stored inside of the folder of the parent component (for example the Drawer component, which is in src/comps/Navbar/Drawer since it isn't used outside of the navbar).
+And lastly, there are a few components that aren't being used outside of their parent components, and those are stored inside of the folder of the parent component (for example the Drawer component, which is stored in src/components/Navbar/Drawer since it isn't used outside of the navbar).
 
 ---
 
